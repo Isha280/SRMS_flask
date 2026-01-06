@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+    
+    <h1>Manage Student Details</h1>
+</div>
+
+<!-- ===== STUDENT FORM ===== -->
+<div class="container">
+    <form method="post">
+        <label>Roll No:</label>
+        <input type="text" name="roll" placeholder="Enter Roll No" required>
+
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Enter Name">
+
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter Email">
+
+        <label>Gender:</label>
+        <input type="text" name="gender" placeholder="Enter Gender">
+
+        <label>DOB:</label>
+        <input type="text" name="dob" placeholder="DD/MM/YYYY">
+
+        <label>Contact:</label>
+        <input type="text" name="contact" placeholder="Enter Contact Number">
+
+        <label>Course:</label>
+        <input type="text" name="course" placeholder="Enter Course">
+
+        <label>Admission Date:</label>
+        <input type="text" name="adm_date" placeholder="DD/MM/YYYY">
+
+        <label>State:</label>
+        <input type="text" name="state" placeholder="Enter State">
+
+        <label>City:</label>
+        <input type="text" name="city" placeholder="Enter City">
+
+        <label>Pin:</label>
+        <input type="text" name="pin" placeholder="Enter Pin Code">
+
+        <label>Address:</label>
+        <textarea name="address" rows="3" placeholder="Enter Address"></textarea>
+
+        <div class="form-buttons">
+            <button type="submit" name="action" value="save">Save</button>
+            <button type="submit" name="action" value="delete" class="delete-btn">Delete</button>
+        </div>
+    </form>
+</div>
+
+<!-- ===== BACK LINK ===== -->
+<div class="container" style="text-align:center; margin-top:20px;">
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

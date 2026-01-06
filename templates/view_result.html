@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Result</title>
+</head>
+<body>
+
+<h2 style="background:#f4a300;color:black;padding:10px;">
+    View Student Results
+</h2>
+
+<form method="get">
+    Roll No:
+    <input type="text" name="roll">
+    <button type="submit">Search</button>
+    <a href="/view-result">Clear</a>
+</form>
+
+<hr>
+
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Marks</th>
+        <th>Total</th>
+        <th>Percentage</th>
+    </tr>
+
+    {% for r in results %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] }}</td>
+        <td>{{ r[3] }}</td>
+        <td>{{ r[4] }}</td>
+        <td>{{ r[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/dashboard">⬅ Back to Dashboard</a>
+
+</body>
+</html>

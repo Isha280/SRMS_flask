@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Result Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+    <h1>Student Result Management System</h1>
+</div>
+
+<!-- ===== NAVBAR (FULL WIDTH) ===== -->
+<div class="menu-bar">
+    <a href="/course">Course</a>
+    <a href="/student">Student</a>
+    <a href="/result">Result</a>
+    <a href="/view_result">View Student Result</a>
+
+    <div class="right">
+        <a href="/logout" class="logout">Logout</a>
+        <a href="/exit" class="exit">Exit</a>
+    </div>
+</div>
+
+<!-- ===== BANNER ===== -->
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/classroom.jpg') }}">
+</div>
+
+<!-- ===== DASHBOARD CARDS ===== -->
+<div class="dashboard-cards">
+    <div class="card red">
+        <h3>Total Courses</h3>
+        <p>{{ c }}</p>
+    </div>
+
+    <div class="card blue">
+        <h3>Total Students</h3>
+        <p>{{ s }}</p>
+    </div>
+
+    <div class="card green">
+        <h3>Total Results</h3>
+        <p>{{ r }}</p>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    SRMS - Student Result Management System | Contact: 9877XXXX01
+</div>
+
+</body>
+</html>
