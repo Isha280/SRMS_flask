@@ -1,25 +1,24 @@
 from flask_mysqldb import MySQL
 
-# Initialize MySQL (to be used by app.py)
-mysql = None
+# Global mysql object
+mysql = MySQL()
+
 
 def init_mysql(app):
     """
-    Initialize MySQL connection with Flask app.
-    Call this once in app.py
+    Initialize MySQL with Flask app
     """
-    global mysql
-    mysql = MySQL(app)
+    mysql.init_app(app)
+
 
 def create_tables_mysql():
     """
-    Create necessary tables in Railway MySQL database.
-    Call this once after initializing mysql.
+    Auto create tables when app starts
     """
     con = mysql.connection
     cur = con.cursor()
 
-    # Courses table
+    # ---------- COURSE ----------
     cur.execute("""
         CREATE TABLE IF NOT EXISTS course(
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -30,7 +29,7 @@ def create_tables_mysql():
         )
     """)
 
-    # Students table
+    # ---------- STUDENT ----------
     cur.execute("""
         CREATE TABLE IF NOT EXISTS student(
             roll VARCHAR(20) PRIMARY KEY,
@@ -48,7 +47,7 @@ def create_tables_mysql():
         )
     """)
 
-    # Results table
+    # ---------- RESULT ----------
     cur.execute("""
         CREATE TABLE IF NOT EXISTS result(
             id INT AUTO_INCREMENT PRIMARY KEY,
