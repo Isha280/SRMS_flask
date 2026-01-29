@@ -1,1 +1,4 @@
-Zmxhc2sKZ3VuaWNvcm4K
+Flask
+flask-mysqldb
+gunicorn
+mysqlclient
